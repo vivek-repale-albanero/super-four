@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+  first-project:
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+      args:
+        - MODE=development
+    container_name: first-project
+    image: first-project
+    ports:
+      - '5555:5555'
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 12G
+    restart: unless-stopped
+    volumes:
+      - ./src:/opt/app/src

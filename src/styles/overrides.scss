@@ -1,0 +1,13 @@
+.firstBody,
+.firstModal {
+
+  ::selection {
+    color: #fff;
+    background: navy;
+  }
+
+  :focus-visible {
+    outline: none;
+  }
+
+}

@@ -1,0 +1,16 @@
+FROM 851796746980.dkr.ecr.us-west-2.amazonaws.com/albanero.base_node_ui_repo:2024.6.1
+
+WORKDIR /opt/app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . /opt/app
+
+EXPOSE 2016
+
+# Set the entrypoint
+ENTRYPOINT ["npm"]
+
+CMD ["run", "start"]

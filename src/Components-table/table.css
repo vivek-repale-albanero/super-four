@@ -1,0 +1,118 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+table {
+  margin-top: 3%;
+  margin-left: 25%;
+  width: 60%;
+  border: 2px solid black;
+  border-collapse: collapse;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+tr {
+  height: 5vh;
+  border: 2px solid black;
+}
+
+th {
+  border: 2px solid black;
+  padding: 3px;
+}
+
+#add {
+  margin-left: 76%;
+  margin-top: 2%;
+  width: 100px;
+  border-radius: 6px;
+  padding: 4px 10px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+.action {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: none;
+}
+
+.actionBtn {
+  width: 60px;
+  padding: 4px;
+  height: 30px;
+  margin-block: 8px;
+  background-color: orangered;
+  box-shadow: 0px 2px 2px black;
+  border-radius: 3px;
+}
+
+.actionBtn1 {
+  background-color: orange;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+.formData2 {
+  width: 80%;
+  height: 50%;
+  margin-top: 5%;
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  table {
+    border: 0;
+    margin-left: 0%;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .action {
+    flex-direction: column;
+  }
+
+  th {
+    font-size: 8px;
+    padding: 1px;
+  }
+
+  #add {
+    margin-left: 68%;
+  }
+
+  p {
+    margin-top: 12px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .text-center {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+}

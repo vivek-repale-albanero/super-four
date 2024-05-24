@@ -18,119 +18,132 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
     />
     <script type="systemjs-importmap" id="importMaps">
-			{}
-		</script>
+      {}
+    </script>
     <script>
-      const DEFAULT_HOST = "demo.albanero.io"
+      const DEFAULT_HOST = "demo.albanero.io";
       const modules = {
-        '@platform/primary-table': {
-          path: 'primary-table-module.js',
-          port: 2020
+        "@platform/primary-table": {
+          path: "primary-table-module.js",
+          port: 2020,
         },
-        '@platform/service-ui-libraries': {
-          path: 'service-ui-libraries.js',
-          port: 2012
+        "@platform/service-ui-libraries": {
+          path: "service-ui-libraries.js",
+          port: 2012,
         },
-        '@platform/service-api-utilities': {
-          path: 'service-api-utilities.js',
-          port: 2005
+        "@platform/service-api-utilities": {
+          path: "service-api-utilities.js",
+          port: 2005,
         },
-        '@platform/file-selection': {
-          path: 'primary-file-selection.js',
-          port: 2013
+        "@platform/file-selection": {
+          path: "primary-file-selection.js",
+          port: 2013,
         },
-        '@platform/modals': {
-          path: 'modals-module.js',
-          port: 2025
+        "@platform/modals": {
+          path: "modals-module.js",
+          port: 2025,
         },
-        '@platform/layout': {
-          path: 'layout-module.js',
-          port: 2002
+        "@platform/layout": {
+          path: "layout-module.js",
+          port: 2002,
         },
-        '@albanero/first-project': {
-          path: 'first-project.web-app.js',
-          port: 5555
-        }
-      }
+        "@albanero/first-project": {
+          path: "first-project.web-app.js",
+          port: 5555,
+        },
+      };
       function addImportMaps(imports) {
         try {
-          let element = document.getElementById('importMaps');
+          let element = document.getElementById("importMaps");
           let importMaps = {
-            imports: imports
+            imports: imports,
           };
           element.innerHTML = JSON.stringify(importMaps, undefined, 2);
         } catch (e) {
           console.log(e);
         }
       }
-      function getDefaultHost(host){
-        let defaultHost = DEFAULT_HOST
-        if(host.includes('demo')){
-          defaultHost = "demo.albanero.io"
-        } else if(host.includes('projects')){
-          defaultHost = "projects.albanero.io"
+      function getDefaultHost(host) {
+        let defaultHost = DEFAULT_HOST;
+        if (host.includes("demo")) {
+          defaultHost = "demo.albanero.io";
+        } else if (host.includes("projects")) {
+          defaultHost = "projects.albanero.io";
         }
-        localStorage.setItem("defaultHost", defaultHost)
-        localStorage.setItem("host", host)
-        return defaultHost
+        localStorage.setItem("defaultHost", defaultHost);
+        localStorage.setItem("host", host);
+        return defaultHost;
       }
-      function getImportMap(module, forceLocalhost=false) {
-        const host = window.location.host
-        const defaultHost = getDefaultHost(host)
-        const isLocalhost = host.includes('localhost')
-        localStorage.setItem("domain", defaultHost?.split(".")?.[0] || "demo")
-        let mapString = ""
-        if ((module === "@albanero/first-project" || forceLocalhost) && isLocalhost) {
+      function getImportMap(module, forceLocalhost = false) {
+        const host = window.location.host;
+        const defaultHost = getDefaultHost(host);
+        const isLocalhost = host.includes("localhost");
+        localStorage.setItem("domain", defaultHost?.split(".")?.[0] || "demo");
+        let mapString = "";
+        if (
+          (module === "@albanero/first-project" || forceLocalhost) &&
+          isLocalhost
+        ) {
           mapString = `http://localhost:${modules[module].port}/${modules[module].path}`;
         } else if (module === "@albanero/first-project") {
           mapString = `https://${host}/${modules[module].path}`;
         } else {
           mapString = `https://${defaultHost}/${modules[module].path}`;
         }
-        return mapString
+        return mapString;
       }
       let defaultImportMaps = {
-          "@platform/primary-table": getImportMap("@platform/primary-table"),
-          "@platform/service-api-utilities": getImportMap("@platform/service-api-utilities"),
-          "@platform/service-ui-libraries": getImportMap("@platform/service-ui-libraries"),
-          "@platform/file-selection": getImportMap("@platform/file-selection"),
-          "@platform/modals": getImportMap("@platform/modals"),
-          "@platform/layout": getImportMap("@platform/layout"),
-          "@albanero/first-project": getImportMap("@albanero/first-project"),
-          "d3": "https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js",
-          "moment": "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js",
-          "react": "https://cdn.jsdelivr.net/npm/react@16.13.0/umd/react.production.min.js",
-          "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.0/umd/react-dom.production.min.js",
-          "react-redux": "https://cdnjs.cloudflare.com/ajax/libs/react-redux/7.2.0/react-redux.min.js",
-          "react-router-dom": "https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/5.2.0/react-router-dom.min.js",
-          "redux": "https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.5/redux.min.js",
-          "socket.io-client": "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"
-        }
-        addImportMaps(defaultImportMaps)
-      </script>
+        "@platform/primary-table": getImportMap("@platform/primary-table"),
+        "@platform/service-api-utilities": getImportMap(
+          "@platform/service-api-utilities"
+        ),
+        "@platform/service-ui-libraries": getImportMap(
+          "@platform/service-ui-libraries"
+        ),
+        "@platform/file-selection": getImportMap("@platform/file-selection"),
+        "@platform/modals": getImportMap("@platform/modals"),
+        "@platform/layout": getImportMap("@platform/layout"),
+        "@albanero/first-project": getImportMap("@albanero/first-project"),
+        d3: "https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js",
+        moment:
+          "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js",
+        react:
+          "https://cdn.jsdelivr.net/npm/react@16.13.0/umd/react.production.min.js",
+        "react-dom":
+          "https://cdn.jsdelivr.net/npm/react-dom@16.13.0/umd/react-dom.production.min.js",
+        "react-redux":
+          "https://cdnjs.cloudflare.com/ajax/libs/react-redux/7.2.0/react-redux.min.js",
+        "react-router-dom":
+          "https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/5.2.0/react-router-dom.min.js",
+        redux:
+          "https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.5/redux.min.js",
+        "socket.io-client":
+          "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js",
+      };
+      addImportMaps(defaultImportMaps);
+    </script>
     <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.12.6/system.min.js"
-    defer="defer"
+      src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.12.6/system.min.js"
+      defer="defer"
     ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/systemjs/dist/extras/amd.min.js"
       defer="defer"
-      ></script>
-      <script
+    ></script>
+    <script
       src="https://cdn.jsdelivr.net/npm/systemjs/dist/extras/named-exports.min.js"
       defer="defer"
-      ></script>
-      
+    ></script>
+
     <script defer="defer">
       setTimeout(() => {
         System.import("@albanero/first-project");
-      }, 500)
+      }, 500);
     </script>
   </head>
 
   <body class="theme-classic first-body">
     <div id="mount" class="appBody firstBody"></div>
   </body>
-  <style>
-  </style>
+  <style></style>
 </html>

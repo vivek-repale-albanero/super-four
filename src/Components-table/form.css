@@ -1,0 +1,104 @@
+.formCont {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.formData1 {
+  width: 600px;
+  background-color: rgba(245, 222, 179, 0.747);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding-top: 30px;
+  row-gap: 30px;
+  position: relative;
+  padding-left: 20px;
+  margin-top: 50px;
+}
+
+.addformhead {
+  position: absolute;
+  top: 10px;
+  left: 41%;
+  text-align: center;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+.normal,
+.inSec select {
+  width: 200px;
+  height: 5vh;
+  margin-left: 1vw;
+  border: none;
+  box-shadow: 0px 2px 2px black;
+  border-radius: 3px;
+  padding-left: 3px;
+}
+
+.mnr-emp {
+  width: 200px;
+  height: 5vh;
+  margin-top: 4%;
+  margin-left: 2vw;
+  border: none;
+  box-shadow: 0px 2px 2px black;
+  border-radius: 3px;
+  padding-left: 3px;
+}
+
+.subempli {
+  position: relative;
+  left: 100px;
+}
+
+#addempbtn {
+  position: relative;
+  left: 100px;
+}
+
+li {
+  width: 140%;
+}
+
+.emp-btn {
+  width: 100px;
+  margin-top: 5vh;
+  margin-left: 1vw;
+  height: 5vh;
+  border: none;
+  box-shadow: 0px 2px 2px black;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+section label {
+  color: red;
+  font-size: 0.5em;
+}
+
+.times {
+  width: 25px;
+  height: 25px;
+  color: red;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.times1 {
+  position: relative;
+  bottom: 20px;
+  left: 90%;
+}
+
+.back {
+  margin-left: 97%;
+  margin-top: -3%;
+  background-color: transparent;
+  font-size: 1em;
+}
